@@ -11,6 +11,12 @@ module "billing_policy" {
 
   policy_name = var.policy_name
   policy_description = var.policy_description
+
+  allow_account_management = var.allow_account_management
+  allow_payment_method_management = var.allow_payment_method_management
+  allow_billing_management = var.allow_billing_management
+  allow_budget_management = var.allow_budget_management
+  allow_cost_and_usage_report_management = var.allow_cost_and_usage_report_management
 }
 
 data "aws_caller_identity" "current" {}
