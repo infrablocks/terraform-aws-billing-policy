@@ -57,9 +57,9 @@ describe 'full example' do
 
   it 'allows all account management actions' do
     %w[
-        aws-portal:ModifyAccount
-        awsbillingconsole:ModifyAccount
-      ].each do |action|
+      aws-portal:ModifyAccount
+      awsbillingconsole:ModifyAccount
+    ].each do |action|
       expect(target_role)
         .to(be_allowed_action(action))
     end
@@ -67,9 +67,9 @@ describe 'full example' do
 
   it 'allows all payment method management actions' do
     %w[
-        aws-portal:ModifyPaymentMethods
-        awsbillingconsole:ModifyPaymentMethods
-      ].each do |action|
+      aws-portal:ModifyPaymentMethods
+      awsbillingconsole:ModifyPaymentMethods
+    ].each do |action|
       expect(target_role)
         .to(be_allowed_action(action))
     end
@@ -77,9 +77,9 @@ describe 'full example' do
 
   it 'allows all billing management actions' do
     %w[
-        aws-portal:ModifyBilling
-        awsbillingconsole:ModifyBilling
-      ].each do |action|
+      aws-portal:ModifyBilling
+      awsbillingconsole:ModifyBilling
+    ].each do |action|
       expect(target_role)
         .to(be_allowed_action(action))
     end
@@ -92,10 +92,10 @@ describe 'full example' do
 
   it 'allows all cost and usage report management actions' do
     %w[
-        cur:PutReportDefinition
-        cur:DeleteReportDefinition
-        cur:ModifyReportDefinition
-      ].each do |action|
+      cur:PutReportDefinition
+      cur:DeleteReportDefinition
+      cur:ModifyReportDefinition
+    ].each do |action|
       expect(target_role)
         .to(be_allowed_action(action))
     end

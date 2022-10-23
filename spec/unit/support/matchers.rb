@@ -20,8 +20,8 @@ RSpec::Matchers
     expected_statement = normalise(expected_statement)
     expected_matchers, expected_entries =
       expected_statement
-        .partition { |_, v| v.respond_to?(:matches?) }
-        .map(&:to_h)
+      .partition { |_, v| v.respond_to?(:matches?) }
+      .map(&:to_h)
 
     policy = JSON.parse(actual, symbolize_names: true)
 
