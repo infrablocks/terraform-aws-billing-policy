@@ -2,12 +2,4 @@
 region: 'eu-west-2'
 
 component: 'test'
-
-work_directory: 'build'
-configuration_directory: "%{hiera('work_directory')}/%{hiera('source_directory')}"
-
-allow_account_management: "yes"
-allow_payment_method_management: "yes"
-allow_billing_management: "yes"
-allow_budget_management: "yes"
-allow_cost_and_usage_report_management: "yes"
+deployment_identifier: "%{hiera('seed')}"

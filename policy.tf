@@ -38,21 +38,21 @@ locals {
 
 data "aws_iam_policy_document" "billing_policy" {
   statement {
-    effect = "Allow"
+    effect  = "Allow"
     actions = concat(
       local.read_actions,
-      var.allow_account_management == "yes" ? local.account_management_actions : [],
-      var.allow_payment_method_management == "yes" ? local.payment_method_management_actions : [],
-      var.allow_billing_management == "yes" ? local.billing_management_actions : [],
-      var.allow_budget_management == "yes" ? local.budget_management_actions : [],
-      var.allow_cost_and_usage_report_management == "yes" ? local.cost_and_usage_report_management_actions : [],
+      local.allow_account_management == "yes" ? local.account_management_actions : [],
+      local.allow_payment_method_management == "yes" ? local.payment_method_management_actions : [],
+      local.allow_billing_management == "yes" ? local.billing_management_actions : [],
+      local.allow_budget_management == "yes" ? local.budget_management_actions : [],
+      local.allow_cost_and_usage_report_management == "yes" ? local.cost_and_usage_report_management_actions : [],
     )
     resources = ["*"]
   }
 }
 
 resource "aws_iam_policy" "billing_policy" {
-  name = var.policy_name
+  name        = var.policy_name
   description = var.policy_description
-  policy = data.aws_iam_policy_document.billing_policy.json
+  policy      = data.aws_iam_policy_document.billing_policy.json
 }
